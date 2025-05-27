@@ -1,0 +1,105 @@
+table dimstaff
+	lineageTag: bdeb3c8f-ff7c-4be6-b852-fe1f952d507a
+	sourceLineageTag: [dbo].[dimstaff]
+
+	column Staff_Id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 33099092-61e8-48a6-82b0-277c2be7db7f
+		sourceLineageTag: Staff_Id
+		summarizeBy: none
+		sourceColumn: Staff_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column First_Name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 99fd877d-5a6c-497e-a575-bdc00764ff7b
+		sourceLineageTag: First_Name
+		summarizeBy: none
+		sourceColumn: First_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7721fba3-5f9a-412c-9b5b-17edc037b80a
+		sourceLineageTag: Last_Name
+		summarizeBy: none
+		sourceColumn: Last_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Birth_Date
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: eb58efae-ab4e-4044-84b5-ebed2874c47c
+		sourceLineageTag: Birth_Date
+		summarizeBy: none
+		sourceColumn: Birth_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d8426c30-a04b-4374-b843-f993d8aa41c7
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5f935055-a50c-488d-8f8b-98fa5b857c92
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zip_Code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 594a2398-f4f7-4116-91c4-ad27df8c03e8
+		sourceLineageTag: Zip_Code
+		summarizeBy: none
+		sourceColumn: Zip_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Role
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d33e02c5-3b41-4e80-8c82-aa5d0064d35a
+		sourceLineageTag: Role
+		summarizeBy: none
+		sourceColumn: Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2610b0cd-e821-449e-90f7-bf524cca4cd0
+		sourceLineageTag: Email
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimstaff = entity
+		mode: directLake
+		source
+			entityName: dimstaff
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

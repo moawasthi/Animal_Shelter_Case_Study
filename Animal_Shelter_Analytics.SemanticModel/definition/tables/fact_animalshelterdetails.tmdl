@@ -1,0 +1,96 @@
+table fact_animalshelterdetails
+	lineageTag: e8c26980-2a68-4bc0-bd83-169f1efa1520
+	sourceLineageTag: [dbo].[fact_animalshelterdetails]
+
+	column Animal_Id
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 73859034-f94f-4937-a5b3-bb3b77398e51
+		sourceLineageTag: Animal_Id
+		summarizeBy: none
+		sourceColumn: Animal_Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 29dc58f4-b4b2-40a5-9e28-8d1e7de9122d
+		sourceLineageTag: Name
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Species
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: f4666ca4-107a-48f3-b174-7a06909b227f
+		sourceLineageTag: Species
+		summarizeBy: none
+		sourceColumn: Species
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Admission_Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 56b60eb8-fd12-4250-96ee-a4e7bfdb638c
+		sourceLineageTag: Admission_Date
+		summarizeBy: none
+		sourceColumn: Admission_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Adopter_Email
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fe45179f-b05a-43de-8c20-524e142e2607
+		sourceLineageTag: Adopter_Email
+		summarizeBy: none
+		sourceColumn: Adopter_Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Adopter_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 224bbdea-428c-414d-8421-a5eb8562c46a
+		sourceLineageTag: Adopter_ID
+		summarizeBy: none
+		sourceColumn: Adopter_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Adoption_Fee
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a21741ac-c095-47b4-95ea-4580cd1195e5
+		sourceLineageTag: Adoption_Fee
+		summarizeBy: sum
+		sourceColumn: Adoption_Fee
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_animalshelterdetails = entity
+		mode: directLake
+		source
+			entityName: fact_animalshelterdetails
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

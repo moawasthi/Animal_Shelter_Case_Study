@@ -1,0 +1,67 @@
+table fact_animalshelter_vaccinations
+	lineageTag: 2ce47494-6d24-4435-95dc-073a13a0af5c
+	sourceLineageTag: [dbo].[fact_animalshelter_vaccinations]
+
+	column Animal_Id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: acc3bbc5-ad08-4018-a088-54ceb21ff554
+		sourceLineageTag: Animal_Id
+		summarizeBy: none
+		sourceColumn: Animal_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vaccination_Time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 602f02e4-a82c-4a7d-bd42-ee0f2a9d9d3d
+		sourceLineageTag: Vaccination_Time
+		summarizeBy: none
+		sourceColumn: Vaccination_Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vaccine_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1ecd422f-2854-4115-85c9-a5abf371e416
+		sourceLineageTag: Vaccine_ID
+		summarizeBy: count
+		sourceColumn: Vaccine_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Batch
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9dc3a8cc-ce12-49a1-88e9-83f7e37d6bbe
+		sourceLineageTag: Batch
+		summarizeBy: none
+		sourceColumn: Batch
+
+		annotation SummarizationSetBy = Automatic
+
+	column Staff_Id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bb719c46-f07a-4a67-9ef7-72361f92251b
+		sourceLineageTag: Staff_Id
+		summarizeBy: none
+		sourceColumn: Staff_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_animalshelter_vaccinations = entity
+		mode: directLake
+		source
+			entityName: fact_animalshelter_vaccinations
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

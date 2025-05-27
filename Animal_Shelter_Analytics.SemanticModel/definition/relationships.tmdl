@@ -1,0 +1,16 @@
+relationship 138496f7-c5c2-9ff2-2780-b670118aee45
+	fromColumn: fact_animalshelterdetails.Adopter_ID
+	toColumn: dimadopter.Adopter_Id
+
+relationship 6f655f3b-031f-51b9-2382-457ee6afa01f
+	fromColumn: fact_animalshelterdetails.Animal_Id
+	toColumn: dimanimal.Animal_Id
+
+relationship 9abc3519-850c-8d8a-f37b-a8485f06656e
+	fromColumn: fact_animalshelter_vaccinations.Staff_Id
+	toColumn: dimstaff.Staff_Id
+
+relationship 186e49da-d612-bf67-7592-2b56599df609
+	fromColumn: dimanimal.Animal_Id
+	toColumn: fact_animalshelter_vaccinations.Animal_Id
+

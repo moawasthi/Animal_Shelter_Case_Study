@@ -1,0 +1,95 @@
+table dimanimal
+	lineageTag: d72d9120-623a-4bcc-970e-05227010f3cc
+	sourceLineageTag: [dbo].[dimanimal]
+
+	column Animal_Id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f095a041-1934-4bb7-8551-0fb68c03e3b8
+		sourceLineageTag: Animal_Id
+		summarizeBy: none
+		sourceColumn: Animal_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6228a5fe-33a3-43ef-9f11-e1b36d2a31ad
+		sourceLineageTag: Name
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Species
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b690fea3-db25-47d0-97cb-37d337e49db9
+		sourceLineageTag: Species
+		summarizeBy: none
+		sourceColumn: Species
+
+		annotation SummarizationSetBy = Automatic
+
+	column Primary_Color
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 901d50aa-662a-4ecd-91ca-9fac0c0b06f3
+		sourceLineageTag: Primary_Color
+		summarizeBy: none
+		sourceColumn: Primary_Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column Breed
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fd103516-249c-445d-a9a5-ebafff8eb4d9
+		sourceLineageTag: Breed
+		summarizeBy: none
+		sourceColumn: Breed
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d2122dd5-bdc3-4b3b-b59f-5c5692d1e44d
+		sourceLineageTag: Gender
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Birth_Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 807bb939-83db-466c-8736-a0c69eddc859
+		sourceLineageTag: Birth_Date
+		summarizeBy: none
+		sourceColumn: Birth_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pattern
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 58800999-f572-4cf6-9a75-cb26e65a3b50
+		sourceLineageTag: Pattern
+		summarizeBy: none
+		sourceColumn: Pattern
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimanimal = entity
+		mode: directLake
+		source
+			entityName: dimanimal
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Fabric_Case_Study_Animal_Shelter_Analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "586ce449-3b18-a0c4-49d4-03303019323b"
+  }
+}

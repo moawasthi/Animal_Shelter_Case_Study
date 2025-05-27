@@ -1,0 +1,93 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"Temperature\",\"version\":\"5.60\",\"type\":2}},\"activeSectionIndex\":0,\"modelExtensions\":[{\"name\":\"extension\",\"entities\":[{\"name\":\"fact_animalshelterdetails\",\"extends\":\"fact_animalshelterdetails\",\"measures\":[{\"name\":\"NoOfAnimals\",\"dataType\":3,\"expression\":\"CALCULATE( COUNTA( fact_animalshelterdetails[Animal_Id]), dimadopter[Adopter_Id] <> BLANK())\",\"errorMessage\":null,\"hidden\":false,\"formulaOverride\":null,\"formatInformation\":{\"formatString\":\"G\",\"format\":\"General\",\"thousandSeparator\":false,\"currencyFormat\":null,\"dateTimeCustomFormat\":null}}]}]}],\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          },
+          {
+            "name": "Temperature",
+            "path": "BuiltInThemes/Temperature.json",
+            "type": 201
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Adoptions Analysis",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "3fd20c086a216e3c0693",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1ce5a353259347b8de0d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":869.1536200809596,\"y\":99.93752426018003,\"z\":2,\"width\":380.0654331712907,\"height\":427.00578547531467,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"dimadopter.Adopter_First_Name\"},{\"queryRef\":\"dimadopter.Adopter_Last_Name\"},{\"queryRef\":\"fact_animalshelterdetails.NoOfAnimals\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimadopter\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_animalshelterdetails\",\"Schema\":\"extension\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Adopter_First_Name\"},\"Name\":\"dimadopter.Adopter_First_Name\",\"NativeReferenceName\":\"Adopter_First_Name\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"NoOfAnimals\"},\"Name\":\"fact_animalshelterdetails.NoOfAnimals\",\"NativeReferenceName\":\"NoOfAnimals\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Adopter_Last_Name\"},\"Name\":\"dimadopter.Adopter_Last_Name\",\"NativeReferenceName\":\"Adopter_Last_Name\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"NoOfAnimals\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"background\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"underline\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'More than 1 Adoptions'\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Schema\":\"extension\",\"Entity\":\"fact_animalshelterdetails\"}},\"Property\":\"NoOfAnimals\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_animalshelterdetails\",\"Schema\":\"extension\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":1,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"NoOfAnimals\"}},\"Right\":{\"Literal\":{\"Value\":\"1L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 427.01,
+          "width": 380.07,
+          "x": 869.15,
+          "y": 99.94,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"21b0789516b41af7295d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":264.9858597807804,\"y\":387.63645773645584,\"z\":4,\"width\":582.9688915177168,\"height\":292.2415482153749,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"fact_animalshelterdetails.NoOfAnimals\"}],\"Category\":[{\"queryRef\":\"dimanimal.Species\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_animalshelterdetails\",\"Schema\":\"extension\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dimanimal\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"NoOfAnimals\"},\"Name\":\"fact_animalshelterdetails.NoOfAnimals\",\"NativeReferenceName\":\"NoOfAnimals\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Species\"},\"Name\":\"dimanimal.Species\",\"NativeReferenceName\":\"Species\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"NoOfAnimals\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"background\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"underline\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Animal Adoptions by Species'\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 292.24,
+          "width": 582.97,
+          "x": 264.99,
+          "y": 387.64,
+          "z": 4.00
+        },
+        {
+          "config": "{\"name\":\"3ba9b4797fdb270d9f53\",\"layouts\":[{\"id\":0,\"position\":{\"x\":6.0568196521321225,\"y\":99.93752426018003,\"z\":3,\"width\":249.84381065045008,\"height\":579.9404816916508}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dimadopter.Adopter_City\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimadopter\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Adopter_City\"},\"Name\":\"dimadopter.Adopter_City\",\"NativeReferenceName\":\"Adopter_City\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"1dc13f6bf12d654c6911\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dimadopter\"}},\"Property\":\"Adopter_City\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimadopter\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Adopter_City\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 579.94,
+          "width": 249.84,
+          "x": 6.06,
+          "y": 99.94,
+          "z": 3.00
+        },
+        {
+          "config": "{\"name\":\"8acbb5a69bd94990aa24\",\"layouts\":[{\"id\":0,\"position\":{\"x\":869.1536200809596,\"y\":531.4859244745937,\"z\":5,\"width\":380.0654331712907,\"height\":149.90628639027005,\"tabOrder\":4}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dimanimal.Primary_Color\",\"active\":true}],\"Y\":[{\"queryRef\":\"fact_animalshelterdetails.NoOfAnimals\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimanimal\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_animalshelterdetails\",\"Schema\":\"extension\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Primary_Color\"},\"Name\":\"dimanimal.Primary_Color\",\"NativeReferenceName\":\"Primary_Color\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"NoOfAnimals\"},\"Name\":\"fact_animalshelterdetails.NoOfAnimals\",\"NativeReferenceName\":\"NoOfAnimals\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"NoOfAnimals\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"background\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"underline\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Adoptions By Color'\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dimanimal\"}},\"Property\":\"Primary_Color\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"subquery\",\"Expression\":{\"Subquery\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimanimal\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_animalshelterdetails\",\"Schema\":\"extension\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Primary_Color\"},\"Name\":\"field\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"NoOfAnimals\"}}}],\"Top\":5}}},\"Type\":2},{\"Name\":\"d\",\"Entity\":\"dimanimal\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Primary_Color\"}}],\"Table\":{\"SourceRef\":{\"Source\":\"subquery\"}}}}}]},\"type\":\"TopN\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 149.91,
+          "width": 380.07,
+          "x": 869.15,
+          "y": 531.49,
+          "z": 5.00
+        },
+        {
+          "config": "{\"name\":\"add312eab04cf99dfb36\",\"layouts\":[{\"id\":0,\"position\":{\"x\":264.9858597807804,\"y\":99.93752426018003,\"z\":0,\"width\":584.4830964307498,\"height\":274.07108925897853,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"treemap\",\"projections\":{\"Group\":[{\"queryRef\":\"dimadopter.Adopter_City\",\"active\":true}],\"Values\":[{\"queryRef\":\"fact_animalshelterdetails.NoOfAnimals\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_animalshelterdetails\",\"Schema\":\"extension\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dimadopter\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Adopter_City\"},\"Name\":\"dimadopter.Adopter_City\",\"NativeReferenceName\":\"Adopter_City\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"NoOfAnimals\"},\"Name\":\"fact_animalshelterdetails.NoOfAnimals\",\"NativeReferenceName\":\"NoOfAnimals\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"NoOfAnimals\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Top 5 Adoptions by City'\"}}},\"background\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}},\"underline\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dimadopter\"}},\"Property\":\"Adopter_City\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"subquery\",\"Expression\":{\"Subquery\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimadopter\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"fact_animalshelterdetails\",\"Schema\":\"extension\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Adopter_City\"},\"Name\":\"field\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"NoOfAnimals\"}}}],\"Top\":5}}},\"Type\":2},{\"Name\":\"d\",\"Entity\":\"dimadopter\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Adopter_City\"}}],\"Table\":{\"SourceRef\":{\"Source\":\"subquery\"}}}}}]},\"type\":\"TopN\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 274.07,
+          "width": 584.48,
+          "x": 264.99,
+          "y": 99.94,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"cfbb4b9a9063d6308300\",\"layouts\":[{\"id\":0,\"position\":{\"x\":342.04987427622325,\"y\":17.008004798265244,\"z\":1,\"width\":746.4624328127524,\"height\":69.92179750397933,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"ANIMAL SHELTER ANALYSIS - Adoption Details\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"24pt\",\"textDecoration\":\"underline\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 69.92,
+          "width": 746.46,
+          "x": 342.05,
+          "y": 17.01,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "Temperature"
+}

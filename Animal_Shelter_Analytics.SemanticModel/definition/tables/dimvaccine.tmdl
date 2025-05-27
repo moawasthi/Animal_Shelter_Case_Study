@@ -1,0 +1,34 @@
+table dimvaccine
+	lineageTag: b58740f7-2f31-4794-a356-f5e7f582e95b
+	sourceLineageTag: [dbo].[dimvaccine]
+
+	column Vaccine_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9f491c22-8296-4709-a57e-3170b7e89b2c
+		sourceLineageTag: Vaccine_ID
+		summarizeBy: count
+		sourceColumn: Vaccine_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vaccine
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 79e3c08d-eb3d-4abe-ba76-0b68d1830041
+		sourceLineageTag: Vaccine
+		summarizeBy: none
+		sourceColumn: Vaccine
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimvaccine = entity
+		mode: directLake
+		source
+			entityName: dimvaccine
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

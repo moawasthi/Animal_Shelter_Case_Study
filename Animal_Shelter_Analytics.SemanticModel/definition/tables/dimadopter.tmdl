@@ -1,0 +1,87 @@
+table dimadopter
+	lineageTag: 11022047-a7e2-4db8-a3e3-f80bd6060927
+	sourceLineageTag: [dbo].[dimadopter]
+
+	column Adopter_Id
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ad6e6019-9106-4912-ae97-902f4a6fd79a
+		sourceLineageTag: Adopter_Id
+		summarizeBy: none
+		sourceColumn: Adopter_Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Adopter_First_Name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 794662e8-51f2-4ba5-bf39-21521eac6553
+		sourceLineageTag: Adopter_First_Name
+		summarizeBy: none
+		sourceColumn: Adopter_First_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Adopter_Last_Name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 88ec4530-db40-4e0e-aa18-b61b2a0779a6
+		sourceLineageTag: Adopter_Last_Name
+		summarizeBy: none
+		sourceColumn: Adopter_Last_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Adopter_Birth_Date
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a024a1d1-9105-4ceb-924d-936daa71815b
+		sourceLineageTag: Adopter_Birth_Date
+		summarizeBy: none
+		sourceColumn: Adopter_Birth_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Adopter_State
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 28adc766-fb1b-43b9-9851-b01d26dec398
+		sourceLineageTag: Adopter_State
+		summarizeBy: none
+		sourceColumn: Adopter_State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Adopter_City
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9816ac6b-6b42-4ada-ae06-28da40447479
+		sourceLineageTag: Adopter_City
+		summarizeBy: none
+		sourceColumn: Adopter_City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Adopter_Email
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f7e96f9d-37b0-469f-a136-a83deca65087
+		sourceLineageTag: Adopter_Email
+		summarizeBy: none
+		sourceColumn: Adopter_Email
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimadopter = entity
+		mode: directLake
+		source
+			entityName: dimadopter
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
